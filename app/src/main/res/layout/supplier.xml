@@ -6,13 +6,15 @@
     android:layout_height="match_parent"
     >
 
-
-
 <androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/supplierName"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:fillViewport="true"
+    android:background="#ff5c01">
 
     <EditText
         android:id="@+id/SupplierName"
@@ -23,12 +25,13 @@
         android:layout_marginTop="30dp"
         android:background="@android:color/transparent"
         android:ems="10"
-        android:fontFamily="@font/baloo_da"
+        android:fontFamily="@font/pacifico"
         android:inputType="textPersonName"
         android:paddingBottom="10dp"
         android:text="Karu's Restaurant"
         android:textSize="35dp"
         android:padding="0dp"
+        android:textColor="#ffffff"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:paddingRight="0dp" />
@@ -72,9 +75,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:layout_marginRight="25dp"
-            app:cardBackgroundColor="#FFC3A0"
+            app:cardBackgroundColor="#FFFFFF"
             app:cardCornerRadius="25dp"
-            app:cardElevation="7dp">
+            app:cardElevation="50dp">
 
             <TextView
                 android:id="@+id/info_text"
@@ -100,15 +103,13 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_view"
-            CardView_cardBackgroundColor="#000000"
-            CardView_cardCornerRadius="500dp"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:layout_marginRight="25dp"
-            app:cardBackgroundColor="#FFC3A0"
+            app:cardBackgroundColor="#ffffff"
             app:cardCornerRadius="25dp"
-            app:cardElevation="7dp">
+            app:cardElevation="50dp">
 
             <TextView
                 android:id="@+id/info_text"
@@ -134,15 +135,13 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_view"
-            CardView_cardBackgroundColor="#000000"
-            CardView_cardCornerRadius="500dp"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:layout_marginRight="25dp"
-            app:cardBackgroundColor="#FFC3A0"
+            app:cardBackgroundColor="#ffffff"
             app:cardCornerRadius="25dp"
-            app:cardElevation="7dp">
+            app:cardElevation="50dp">
 
             <TextView
                 android:id="@+id/info_text"
@@ -175,9 +174,9 @@
             android:layout_marginTop="25dp"
             android:layout_marginRight="25dp"
             android:layout_marginBottom="10dp"
-            app:cardBackgroundColor="#FFC3A0"
+            app:cardBackgroundColor="#FFFFFF"
             app:cardCornerRadius="25dp"
-            app:cardElevation="7dp">
+            app:cardElevation="50dp">
 
             <TextView
                 android:id="@+id/info_text"
@@ -212,7 +211,7 @@
         app:layout_constraintTop_toBottomOf="@+id/grid"
         android:background="@android:color/darker_gray" />
 
-    <LinearLayout
+    <GridLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -220,28 +219,53 @@
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@+id/grid">
 
-        <TextView
-            android:id="@+id/today_sales"
+        <GridLayout
+            android:id="@+id/today_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
-            android:text="Today's sales"
-            android:textColor="#474444"
-            android:textSize="30dp"
-            android:textStyle="bold" />
+            android:background="#ff5c01"
+            android:orientation="horizontal"
+            android:columnCount="2"
+            android:rowCount="1"
+            app:layout_constraintTop_toBottomOf="@+id/grid">
+
+
+            <TextView
+                android:id="@+id/today_sales"
+                android:layout_width="267dp"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:text="Today's sales"
+                android:textColor="#FFFFFF"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="upload"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button"
+
+                />
+        </GridLayout>
+
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_view"
-            CardView_cardBackgroundColor="#000000"
-            CardView_cardCornerRadius="500dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="25dp"
+            android:layout_marginBottom="50dp"
             app:cardCornerRadius="25dp"
-            app:cardElevation="5dp"
+            app:cardElevation="50dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rating">
@@ -325,7 +349,9 @@
         </androidx.cardview.widget.CardView>
 
 
-    </LinearLayout>
+
+
+    </GridLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

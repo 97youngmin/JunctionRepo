@@ -11,4 +11,9 @@
         <item name="colorControlActivated">@color/gold</item>
     </style>
 
+    <style name="MatButton" parent="Theme.MaterialComponents">
+        <item name="MaterialButton_strokeColor">@android:color/holo_red_light</item>
+
+    </style>
+
 </resources>

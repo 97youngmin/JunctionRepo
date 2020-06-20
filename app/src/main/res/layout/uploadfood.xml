@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ff5c01">
@@ -29,7 +33,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintTop_toEndOf="@id/textView">
+        >
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_view"
@@ -50,20 +54,20 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:padding="20dp"
-
-
                 >
 
                 <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="105dp"
+                    android:layout_width="125dp"
                     android:layout_height="111dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="16dp"
+                    android:src="@drawable/upload"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView"
-                    tools:srcCompat="@drawable/file_upload" />
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+<!--                    tools:srcCompat="@drawable/file_upload" -->
+
 
                 <EditText
                     android:id="@+id/editTextTextPersonName"
@@ -71,7 +75,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:ems="10"
-                    android:text="Dish name"
+                    android:hint="Dish name"
                     android:textColor="#696969"/>
 
                 <EditText
@@ -82,7 +86,7 @@
                     android:ems="10"
                     android:inputType="date"
                     android:textColor="#696969"
-                    android:text="Expiry date (i.e. 2020/05/20)" />
+                    android:hint="Expiry date (i.e. 2020/05/20)" />
 
                 <EditText
                     android:id="@+id/editTextNumberDecimal"
@@ -92,7 +96,7 @@
                     android:ems="10"
                     android:textColor="#696969"
                     android:inputType="numberDecimal"
-                    android:text="Price (i.e. $4.00)" />
+                    android:hint="Price (i.e. $4.00)" />
 
                 <EditText
                     android:id="@+id/editTextNumber"
@@ -102,7 +106,7 @@
                     android:ems="10"
                     android:textColor="#696969"
                     android:inputType="number"
-                    android:text="Quantity" />
+                    android:hint="Quantity" />
 
 
             </LinearLayout>
@@ -119,10 +123,11 @@
             android:textColor="#FFFFFF"
             android:textStyle="bold"
             android:layout_gravity="center_horizontal"
-
+            android:layout_marginBottom="100dp"
             />
 
     </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

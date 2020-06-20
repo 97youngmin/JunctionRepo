@@ -16,7 +16,7 @@
     android:fillViewport="true"
     android:background="#ff5c01">
 
-    <EditText
+    <TextView
         android:id="@+id/SupplierName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -77,7 +77,7 @@
             android:layout_marginRight="25dp"
             app:cardBackgroundColor="#FFFFFF"
             app:cardCornerRadius="25dp"
-            app:cardElevation="50dp">
+            app:cardElevation="10dp">
 
             <TextView
                 android:id="@+id/info_text"
@@ -109,7 +109,7 @@
             android:layout_marginRight="25dp"
             app:cardBackgroundColor="#ffffff"
             app:cardCornerRadius="25dp"
-            app:cardElevation="50dp">
+            app:cardElevation="10dp">
 
             <TextView
                 android:id="@+id/info_text"
@@ -141,7 +141,7 @@
             android:layout_marginRight="25dp"
             app:cardBackgroundColor="#ffffff"
             app:cardCornerRadius="25dp"
-            app:cardElevation="50dp">
+            app:cardElevation="10dp">
 
             <TextView
                 android:id="@+id/info_text"
@@ -176,7 +176,7 @@
             android:layout_marginBottom="10dp"
             app:cardBackgroundColor="#FFFFFF"
             app:cardCornerRadius="25dp"
-            app:cardElevation="50dp">
+            app:cardElevation="10dp">
 
             <TextView
                 android:id="@+id/info_text"
@@ -352,7 +352,5 @@
 
 
     </GridLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

@@ -17,6 +17,7 @@ UPLOADS_TABLE = "Uploads"
 SUPERMARKET = "supermarket"
 BAKERY = "bakery"
 HAWKER = "food centre"
+RESTAURANT = "restaurant"
 
 ## init
 app = Flask(__name__)
@@ -26,13 +27,13 @@ geolocator = Nominatim()
 
 def create_table():
     # Create a new table
-    table_name = 'Supplier'
+    table_name = 'Uploads'
     print('Create a table with name - ' + table_name)
     table_service.create_table(table_name)
     print('done')
 
 def delete_table():
-    table_service.delete_table('Supplier')
+    table_service.delete_table('Uploads')
 
 def insert_supplier(name, location, category, phone, closing):
     ## can insert or update supplier
@@ -140,18 +141,19 @@ def query_all(table):
 
 @app.route('/upload', methods=['POST'])
 def upload():
-    if not request.form:
+    if not request.json:
         abort(400)
-    print(request.files['image'])
-    f = request.files['image']
-    f.save(os.path.join(app.root_path, 'image', secure_filename(f.filename)))
-    print(request.form.to_dict())
-    req = request.form.to_dict()
-    id_upload = insert_uploads(req["name"], req["expiry"], f.filename, req["price"], req["quantity"])
+    #print(request.files['image'])
+    #f = request.files['image']
+    #f.save(os.path.join(app.root_path, 'image', secure_filename(f.filename)))
+    #req = request.form.to_dict()
+    req = request.json
+    print(request.json)
+    id_upload = insert_uploads(req["name"], req["expiry"], req["image"], req["price"], req["quantity"], req["company"])
     return jsonify({'success': 'true', 'id': id_upload}), 200
 
 
-@app.route('/food', methods=['GET'])
+@app.route('/food', methods=['POST'])
 def get_food():
     if not request.json:
         abort(400)
@@ -165,15 +167,11 @@ def get_food():
     for data in res:
         temp = data
         supplier = query(SUPPLIER_TABLE, data.get("company"))[0]
-        if not request.args.get('category') is None:
-            if request.args.get('category') == supplier['category']:
-                supplier.pop('name', None)
-                temp.update(supplier)
-                result.append(temp)
-        else: 
+        if request.json['category'] == "" or request.json['category'] == supplier['category']:
             supplier.pop('name', None)
             temp.update(supplier)
             result.append(temp)
+
     result.sort(key=lambda d: sqrt((abs(lat - d["lat"]) ** 2) + (abs(lon - d["long"]) ** 2)))
     print(result)
     return jsonify(result), 200
@@ -182,12 +180,22 @@ def get_food():
 @app.route('/')
 def populate():
     # insert_supplier("FairPrice", "587 Bukit Timah Rd, Singapore 269707", "supermarket", "+6564696245", "23:00")
+    # insert_supplier("Giant", "144 Upper Bukit Timah Rd, 588177", "supermarket", "+6564637804", "-")
     # insert_supplier("Crown Bakery & Cafe", "557 Bukit Timah Road, 269694", "bakery", "+6564633066", "18:30")
+    # insert_supplier("The Bread Table", "145 Upper Bukit Timah Rd", "bakery", "+6565533066", "16:30")
     # insert_supplier("Adam Road Food Centre", "2 Adam Rd, 289877", "food centre", "+6562255632", "00:00")
-    # insert_uploads("Bread", "20/06/2020", "/hello.jpg", 0.50, 5, "FairPrice")
-    # insert_uploads("tuna", "20/07/2020", "/hello.jpg", 1.50, 10, "FairPrice")
-    # insert_uploads("Bread", "21/06/2020", "/hello.jpg", 0.80, 3, "Crown Bakery & Cafe")
-    # insert_uploads("karage", "20/06/2020", "/hello.jpg", 0.30, 3, "Adam Road Food Centre")
+    # insert_supplier("Al-Azhar Restaurant", "11 Cheong Chin Nam Rd, 599736", "restaurant", "+6564665052", "-")
+    # insert_uploads("Cake", "21/06/2020", "https://bakingamoment.com/wp-content/uploads/2017/06/IMG_3437-tiramisu-cake-square.jpg", 1.50, 3, "Crown Bakery & Cafe")
+    # insert_uploads("Bread", "21/06/2020", "https://images.kitchenstories.io/recipeImages/34_02_RusticGermanBread_TitlePicture/34_02_RusticGermanBread_TitlePicture-medium-landscape-150.jpg", 1.50, 3, "The Bread Table")
+    # insert_uploads("Beef", "21/06/2020", "https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/roast-beef-recipes.jpg", 2.70, 4  , "FairPrice")
+    # insert_uploads("Eggs", "21/06/2020", "https://img3.exportersindia.com/product_images/bc-full/dir_71/2113329/deshi-eggs-2004562.jpg", 1.20, 10  , "FairPrice")
+    # insert_uploads("Tuna Can", "25/06/2020", "https://aw6w1k9h0c-flywheel.netdna-ssl.com/wp-content/uploads/2019/02/Albacore_Angle_IMG_2669.jpg", 1.80, 18, "Giant")
+    # insert_uploads("Bread", "21/06/2020", "https://burpple-1.imgix.net/foods/25e09a4277ab67571a883556_original.?w=400&h=400&fit=crop&q=80&auto=format", 0.30, 6, "Giant")
+    # insert_uploads("Rice", "21/06/2020", "https://cdn.loveandlemons.com/wp-content/uploads/2020/03/rice.jpg", 0.10, 7, "Al-Azhar Restaurant")
+    # insert_uploads("Butter Chicken", "21/06/2020", "https://healthyfitnessmeals.com/wp-content/uploads/2020/01/Butter-chicken.jpg", 5.30, 4, "Al-Azhar Restaurant")
+    # insert_uploads("Veggies", "21/06/2020", "https://s.yimg.com/ny/api/res/1.2/2TkIIfQ95EMfykMWt.lWFA--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/http://media.zenfs.com/en-SG/homerun/sethlui/c81a7fa1b9397b6d6495b0114fb951fe", 0.20, 3, "Adam Road Food Centre")
+    #
+    # insert_uploads("Satay", "21/06/2020", "https://www.rotinrice.com/wp-content/uploads/2013/09/IMG_9567.jpg", 0.10, 30, "Adam Road Food Centre")
     # query_all_table(UPLOADS_TABLE)
     # delete_table()
     # create_table()

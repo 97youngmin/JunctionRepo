@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:minHeight="?attr/actionBarSize"
+    android:layout_height="wrap_content"
+    android:background="@color/orange"
+    app:titleTextColor="@android:color/white"
+    android:elevation="4dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+    app:contentInsetLeft="0dp"
+    app:contentInsetStart="0dp"
+    android:id="@+id/toolbar">
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:adjustViewBounds="true"
+        android:src="@drawable/logo"
+        android:layout_margin="5dp"
+        android:layout_gravity="left"/>
+
+    <ImageView
+        android:id="@+id/profile"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:adjustViewBounds="true"
+        android:src="@drawable/profile"
+        android:layout_gravity="right"
+        android:layout_margin="5dp"/>
+
+
+
+    <androidx.appcompat.widget.SearchView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="right">
+
+    </androidx.appcompat.widget.SearchView>
+
+<!--    <TextView-->
+<!--        android:id="@+id/toolbar_title"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Snatch"-->
+<!--        android:textColor="@android:color/white"-->
+<!--        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"-->
+<!--        android:layout_gravity="right"-->
+<!--        android:layout_margin="15dp"-->
+<!--        />-->
+
+</androidx.appcompat.widget.Toolbar>

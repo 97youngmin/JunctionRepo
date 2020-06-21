@@ -43,6 +43,11 @@ Following these steps will deploy server the server in localhost:5000. Then run 
 
 ## Screenshots of demo
 
+![Registration](https://user-images.githubusercontent.com/42865415/85217026-b9c3da80-b3be-11ea-855c-5bdfc4bfd041.png)
+![Supplier](https://user-images.githubusercontent.com/42865415/85217027-bcbecb00-b3be-11ea-9ac0-f06e1efa59a5.png)
+![User](https://user-images.githubusercontent.com/42865415/85217029-bdeff800-b3be-11ea-9e26-ffed8d1c0a48.png)
+![BackendCodeSnapshot](https://user-images.githubusercontent.com/42865415/85217031-bfb9bb80-b3be-11ea-9d8d-56ff67b0ef1b.png)
+![Frontend](https://user-images.githubusercontent.com/42865415/85217034-c0eae880-b3be-11ea-84d5-25855e7691fd.png)
 
 
 

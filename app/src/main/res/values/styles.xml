@@ -11,11 +11,6 @@
         <item name="colorControlNormal">@color/grey</item>
         <item name="colorControlActivated">@color/gold</item>
     </style>
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 1ddaf657d7b9276280ee3bee7c1c0e2db7689251
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -25,7 +20,6 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-<<<<<<< HEAD
     <!--    <style name="AppTheme.NoActionBar">-->
     <!--        <item name="windowActionBar">false</item>-->
     <!--        <item name="windowNoTitle">true</item>-->
@@ -35,6 +29,4 @@
 
     <!--    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />-->
 
-=======
->>>>>>> 1ddaf657d7b9276280ee3bee7c1c0e2db7689251
 </resources>

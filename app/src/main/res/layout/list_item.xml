@@ -13,7 +13,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/orange"
+            android:background="@color/white"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/pacifico"
                 android:text="Food Name"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="20sp"
                 android:gravity="top"/>
 
@@ -66,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/imageView"
                 android:text="company"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:layout_toEndOf="@id/imageView" />
             <TextView
                 android:id="@+id/textViewExpiry"
@@ -74,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/imageView"
                 android:text="expiry"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:layout_toEndOf="@id/imageView" />
             <LinearLayout
                 android:layout_width="match_parent"
@@ -90,7 +90,7 @@
                     android:layout_toRightOf="@id/imageView"
                     android:fontFamily="@font/pacifico"
                     android:text="1.20"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="20sp" />
 
                 <TextView
@@ -107,7 +107,7 @@
                 android:fontFamily="@font/pacifico"
                 android:gravity="right"
                 android:text="5"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="20sp" />
 
             </LinearLayout>

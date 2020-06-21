@@ -36,7 +36,7 @@ def delete_table():
     table_service.delete_table('Uploads')
 
 def insert_supplier(name, location, category, phone, closing):
-    ## can insert or update supplier
+    ## can insert or update supplier_dashboard_fragment
     print('Creating Supplier')
     id_supplier = str(uuid.uuid1())
     task = Entity()
@@ -54,7 +54,7 @@ def insert_supplier(name, location, category, phone, closing):
     print('Created in Supplier: {name} with uuid {uuid}'.format(name=name, uuid=id_supplier))
 
 def insert_user(email, name, penalty, following):
-    ## can insert or update supplier
+    ## can insert or update supplier_dashboard_fragment
     print('Creating User')
     task = Entity()
     task.PartitionKey = email
@@ -65,7 +65,7 @@ def insert_user(email, name, penalty, following):
     print('Created in User: {name} with uuid {uuid}'.format(email=email, name=name))
 
 def insert_uploads(food, expiry, image, price, quantity, company):
-    ## can insert or update supplier
+    ## can insert or update supplier_dashboard_fragment
     print('Creating Uploads')
     id_upload = str(uuid.uuid1())
     task = Entity()
@@ -81,7 +81,7 @@ def insert_uploads(food, expiry, image, price, quantity, company):
     return id_upload
 
 # def get_supplier(name):
-#     task = table_service.get_entity('Test', name, supplier[name])
+#     task = table_service.get_entity('Test', name, supplier_dashboard_fragment[name])
 #     print(task.phone)
 
 def to_json(table, task):

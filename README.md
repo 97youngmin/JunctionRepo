@@ -2,7 +2,8 @@
 Snatch it, not Trash it!
 
 ## Demo Video
-[Click here for Demo]()
+[Click here for Demo](https://youtu.be/eoxcpPwsVTQ
+)
 
 ## Description
 Statistically, 33 - 50% of food produced globally is wasted. Food waste refers to the decrease in quantity or quality of food resulting from decisions & actions by retailers, food service providers and consumers. Food waste is an extremely detrimental issue as it contributes to land and water pollution. Food wastage that happens later down the chain such as distribution and consumption phases will exacerbate global warming. Food is wasted especially when it is close to, at or beyond the expiry date, and hence gets discarded by retailers such as restaurants and supermarkets.

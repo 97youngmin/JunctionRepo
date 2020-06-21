@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
-    android:background="@color/orange"
     android:layout_height="match_parent"
+    android:background="@color/orange"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -14,29 +14,29 @@
 
     <EditText
         android:id="@+id/username"
-        android:layout_width="315dp"
+        android:layout_width="match_parent"
         android:layout_height="63dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="212dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="24dp"
         android:background="@color/white"
-        android:hint="@string/prompt_email"
+        android:hint="  Email"
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.156"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="316dp"
+        android:layout_width="match_parent"
         android:layout_height="59dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="24dp"
         android:background="@color/white"
-        android:hint="@string/prompt_password"
+        android:hint="  Password"
         android:imeActionLabel="@string/action_sign_in_short"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
@@ -48,13 +48,13 @@
 
     <EditText
         android:id="@+id/password2"
-        android:layout_width="316dp"
+        android:layout_width="match_parent"
         android:layout_height="59dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="144dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="24dp"
         android:background="@color/white"
-        android:hint="@string/prompt_password_again"
+        android:hint="  Re-type password"
         android:imeActionLabel="@string/action_sign_in_short"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
@@ -62,26 +62,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <Button
         android:id="@+id/register"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="64dp"
         android:background="@color/white"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         android:clickable="true"
+        android:layout_marginTop="20dp"
         android:text="@string/action_sign_in_short"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password"
-        app:layout_constraintVertical_bias="0.698" />
+        app:layout_constraintTop_toBottomOf="@+id/password2" />
 
     <ProgressBar
         android:id="@+id/loading"
@@ -99,25 +95,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.3" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="368dp"
-        android:layout_height="198dp"
-        app:srcCompat="@drawable/logo"
-        tools:layout_editor_absoluteX="-4dp"
-        tools:layout_editor_absoluteY="-15dp"
-        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="145dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:fontFamily="@font/pacifico"
-        android:text="TextView"
-        android:textSize="160sp"
-        android:textColor="@color/white"
-        tools:layout_editor_absoluteX="118dp"
-        tools:layout_editor_absoluteY="130dp"
-        tools:text="Registering as User"
-        tools:ignore="MissingConstraints" />
+        android:text="Registering as User"
+        android:textColor="#FFFFFF"
+        android:textSize="35dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

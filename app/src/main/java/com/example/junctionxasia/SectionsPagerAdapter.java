@@ -1,4 +1,4 @@
-package com.example.junctionxasia.ui.main;
+package com.example.junctionxasia;
 
 import android.content.Context;
 
@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.junctionxasia.R;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to

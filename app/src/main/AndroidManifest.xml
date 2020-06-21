@@ -30,8 +30,18 @@
             android:name=".User"
             android:label="user"></activity>
         <activity
-            android:name=".Register"
+            android:name=".RegisterUser"
             android:label="register"></activity>
+
+        <activity
+            android:name=".SupplierMainActivity"
+            android:label="fragmentHolder">
+
+
+        </activity>
+        <activity android:name=".RegisterSupplier"/>
+
+        <activity android:name=".DualRegister"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

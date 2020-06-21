@@ -1,4 +1,5 @@
-package com.example.junctionxasia.ui.main;
+package com.example.junctionxasia;
+
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,17 +7,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.junctionxasia.R;
-import com.example.junctionxasia.SupplierMainActivity;
-import com.example.junctionxasia.UploadFood;
+//import com.github.mikephil.charting.charts.BarChart;
+//import com.github.mikephil.charting.data.BarData;
+//import com.github.mikephil.charting.data.BarDataSet;
+//import com.github.mikephil.charting.data.BarEntry;
+//import com.github.mikephil.charting.utils.ColorTemplate;
+
+import java.util.ArrayList;
+
 
 /**
  * A placeholder fragment containing a simple view.
@@ -68,11 +71,31 @@ public class PlaceholderFragment extends Fragment {
             return frag;
         }
         else if (index ==2){
-            View frag = inflater.inflate(R.layout.uploadfood, container, false);
+            View frag = inflater.inflate(R.layout.reviews, container, false);
             return frag;
         }
         else if (index ==3){
-            View frag = inflater.inflate(R.layout.activity_supplier_main, container, false);
+            View frag = inflater.inflate(R.layout.analysis, container, false);
+//            BarChart barChart = frag.findViewById(R.id.barchart);
+//            ArrayList<BarEntry> entries = new ArrayList<>();
+//            entries.add(new BarEntry(8f, 0));
+//            entries.add(new BarEntry(3f, 1));
+//            entries.add(new BarEntry(5f, 2));
+//
+//            BarDataSet bardataset = new BarDataSet(entries, "Cells");
+//
+//            ArrayList<String> labels = new ArrayList<String>();
+//            labels.add("Butter Chicken");
+//            labels.add("Briyani");
+//            labels.add("Garlic Naan");
+//
+//
+//            BarData data = new BarData(labels, bardataset);
+//            barChart.setData(data); // set the data and list of labels into chart
+//            bardataset.setColors(ColorTemplate.COLORFUL_COLORS);
+
+
+
             return frag;
         }
         else{
@@ -80,13 +103,6 @@ public class PlaceholderFragment extends Fragment {
             return root;
         }
 
-//        final TextView textView = root.findViewById(R.id.section_label);
-//        pageViewModel.getText().observe(this, new Observer<String>() {
-//            @Override
-//            public void onChanged(@Nullable String s) {
-//                textView.setText(s);
-//            }
-//        });
     }
     public void uploadFood()
     {

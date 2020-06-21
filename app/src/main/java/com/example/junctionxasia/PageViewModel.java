@@ -1,5 +1,4 @@
-package com.example.junctionxasia.ui.main;
-
+package com.example.junctionxasia;
 import androidx.arch.core.util.Function;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
